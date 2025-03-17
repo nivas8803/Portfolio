@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivas K - Java Full Stack Developer</title>
+    <style>
+        :root {
+            --primary-color: #f5be07;
+            --primary: #1a1a1a;
+            --secondary: #2d2d2d;
+            --accent: #f5be07;
+            --text: #ffffff;
+            --text-secondary: #bbbbbb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            background-color: var(--secondary);
+            padding: 1rem 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--secondary);
+        }
+
+        .hero-content {
+            max-width: 1000px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        #jobRole {
+            min-height: 1.7em;
+            /* Adjust this value */
+            opacity: 1;
+            position: relative;
+            display: grid;
+            /* Change to grid */
+            place-items: left;
+            /* Vertically center content */
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 5rem 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background-color: var(--secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 5rem 0;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--secondary);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 5rem 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--secondary);
+            border-radius: 8px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-links a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .contact-links a:hover {
+            background-color: var(--accent);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn.primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn.secondary {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h3>Hello!</h3>
+                <h1 style="color: #f5be07;"><span style="font-size: large; color: #ffffff;">I'm</span> Nivas K</h1>
+                <h3 id="jobRole">Java Full Stack Developer</h3>
+                <br>
+                <p> Dedicated Java Full Stack Developer with 5+ years of experience in designing and implementing
+                    high-performance web applications using Java, Spring Boot, and microservices architecture. Proven
+                    track record
+                    of enhancing application performance and scalability through cloud-native development and DevOps
+                    practices.
+                    Experienced in agile methodologies, CI/CD pipelines, and mentoring junior developers. AWS Certified
+                    Solutions
+                    Architect and Oracle Certified Associate Java Programmer with expertise in building resilient and
+                    scalable cloud-based applications.</p>
+            </div><br>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn primary">Contact Me</a>
+                <a href="#projects" class="btn secondary">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 style="color: #f5be07;">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Programming Languages</h3>
+                    <p> Java, Python, C#, JavaScript, TypeScript</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Frontend</h3>
+                    <p>React, Angular, HTML5, CSS3, JavaScript, TypeScript</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Backend</h3>
+                    <p>Java, Spring Boot, GraphQL, REST APIs, Microservices, Hibernate, JPA, JDBC</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Testing Frameworks</h3>
+                    <p> JUnit, Mockito, TestNG, Jasmine, Karma, Selenium, Postman, RestAssured</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Cloud & DevOps</h3>
+                    <p>AWS, Docker, Kubernetes, Jenkins, Terraform</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Databases</h3>
+                    <p>MySQL, NO-SQL, PostgreSQL, MongoDB, DynamoDB</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Event-Driven & Monitoring</h3>
+                    <p>Kafka, ELK Stack, Prometheus, Grafana</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Methodologies</h3>
+                    <p>Agile/Scrum, CI/CD, Microservices Architecture</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 style="color: #f5be07;">Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3 style="color: #ede2d3;">Enterprise Microservices Transformation</h3>
+                    <p style="color: #bbbbbb;">Tech Stack: REST API&#124; Java&#124; Maven&#124; AWS&#124; Kafka&#124;
+                        Kubernetes&#124;</p>
+                    <br>
+                    <ul>
+                        <li>Spearheaded migration to microservices architecture using Spring Cloud and AWS, resulting in
+                            30% improved deployment efficiency.</li>
+                        <li>Implemented event-driven processing with Kafka and established comprehensive observability
+                            using ELK Stack, reducing issue resolution time by 50%.</li>
+                        <li>The system serves as a blueprint for cloud-native Java applications with high scalability
+                            and resilience.</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h3 style="color: #ede2d3;">Gateway Pets Adoption Web Application</h3>
+                    <p style="color: #bbbbbb;">Tech Stack: REST API&#124; Java&#124; Maven&#124; WordPress&#124;</p>
+                    <br>
+                    <ul>
+                        <li>Architected and developed a modern pet adoption platform using Java 11 and Spring Boot 2.5,
+                            featuring integration with ShelterLuv API and sophisticated caching mechanisms. </li>
+                        <li>The application demonstrated 50% improved data retrieval efficiency and maintains 90% test
+                            coverage, showcasing expertise in building production-grade REST APIs with comprehensive
+                            testing.</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h3 style="color: #ede2d3;">Microservices-based Financial Platform</h3>
+                    <p style="color: #bbbbbb;">Tech Stack: Java&#124; Spring Boot&#124; Quarkus&#124; Kafka&#124;
+                        Docker&#124;</p>
+                    <br>
+                    <ul>
+                        <li>I integrated Kafka for asynchronous communication between services, enabling real-time event
+                            processing and ensuring data consistency across the distributed system.</li>
+                        <li>I utilized Docker and Kubernetes to containerize microservices and automate deployment,
+                            scaling, and management of the application in a cloud environment (AWS).</li>
+                        <li>I contributed to the establishment of a CI/CD pipeline using Git and Jenkins, automating the
+                            build, test, and deployment processes for rapid and reliable software releases.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 style="color: #f5be07;">Professional Experience</h2>
+            <br>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3 style="color: #ede2d3;">Java Full Stack Developer</h3>
+                    <p>AAIS, Dallas, TX (Jan. 2024 - Present)</p>
+                    <ul>
+                        <li>Scalable Web Development: Engineered applications with Java, Spring Boot, and Angular, boosting deployment efficiency by 30%.</li>
+                        <li>Microservices & Cloud: Implemented Spring Cloud microservices and deployed cloud-native applications on AWS (EC2, S3, Lambda) and OpenShift (Kubernetes).</li>
+                        <li>Security & APIs: Secured applications with OAuth 2.0 and JWT; developed efficient GraphQL and RESTful APIs, reducing over-fetching by 30%.</li>
+                        <li>Performance & DevOps: Optimized database performance with SQL and NoSQL (MongoDB), improving query speed by 40%; implemented CI/CD pipelines with Jenkins and Docker, cutting deployment time by 50%.</li>
+                        <li>Monitoring & Collaboration: Utilized Elasticsearch and Kibana for log analysis, reducing issue resolution time by 50%; enhanced team collaboration with Swagger API documentation (25% reduction in integration issues).</li>
+                        <li>Agile & Leadership: Led Agile development, reducing project delivery time by 25%; mentored junior developers, increasing team productivity by 20%.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3 style="color: #ede2d3;">Java Full Stack Developer</h3>
+                    <p>Saint Louis University, Saint Louis, MO (Mar. 2023 - Dec. 2023)</p>
+                    <ul>
+                        <li>Web Application Development: Built and maintained Java applications with Spring Boot and Hibernate, enhancing system efficiency by 25%.</li>
+                        <li>API & Testing: Designed RESTful APIs; automated testing with Selenium WebDriver, JUnit, and TestNG, improving test coverage by 40% and reducing manual testing by 60%.</li>
+                        <li>Real-time Data Processing: Implemented event-driven architecture with Apache Kafka, boosting system responsiveness by 40%.</li>
+                        <li>Agile & Collaboration: Participated in Agile ceremonies and code reviews, ensuring high code quality.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3 style="color: #ede2d3;">Java Developer</h3>
+                    <p>Discover Financial Services, India (May 2020 - Dec. 2022)</p>
+                    <ul>
+                        <li>Backend Development & Performance: Engineered web applications with Java, Spring, and Hibernate, improving performance by 25%; optimized backend processes.</li>
+                        <li>Microservices & APIs: Developed Spring Boot RESTful APIs and implemented microservices architecture.</li>
+                        <li>Automated Testing & DevOps: Created automated testing frameworks with JUnit and Mockito, reducing bugs by 30%; utilized Terraform for Infrastructure as Code and deployed applications with Docker and Kubernetes.</li>
+                        <li>Message Queuing: Implemented Apache Kafka for asynchronous processing.</li>
+                        <li>API Testing: Developed and executed API test scripts using Postman and RestAssured.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 style="color: #f5be07;">Get In Touch</h2>
+            <div class="contact-links">
+                <a href="mailto:nivas22.k@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/nivas88" target="_blank">LinkedIn</a>
+                <a href="https://github.com/nivas8803" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Text animation
+        const textElement = document.getElementById('jobRole');
+        const text = textElement.textContent;
+        const interval = 50; // Delay between each letter (milliseconds)
+        let index = 0;
+
+        function typeWriter() {
+            textElement.textContent = text.substring(0, index);
+            index++;
+
+            if (index <= text.length) {
+                setTimeout(typeWriter, interval);
+            } else {
+                index = 0; // Reset index for continuous loop
+                setTimeout(typeWriter, interval * 20); // Add a pause before restarting
+            }
+        }
+
+        // Start the animation when the page loads
+        window.onload = function () {
+            typeWriter();
+        };
+
+    </script>
+</body>
+
+</html>
